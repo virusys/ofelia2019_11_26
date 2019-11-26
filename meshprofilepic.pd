@@ -1,24 +1,24 @@
-#N canvas 1181 343 444 495 12;
-#X obj 8 54 ofSetup;
-#X msg 70 8 destroy \, setSize 400 400 \, create;
-#X obj 8 31 ofWindow;
-#X obj 80 56 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 1136 452 446 400 12;
+#X obj 4 49 ofSetup;
+#X msg 66 4 destroy \, setSize 400 400 \, create;
+#X obj 4 27 ofWindow;
+#X obj 76 51 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 8 269 ofDraw;
-#X msg 8 8 destroy;
-#X obj 8 292 ofelia f \; local v = require("\$0-mainmesh") \; ofTranslate(200
-\, 200) \; local fr = ofGetFrameNum() * 0.1 \; for i=0 \, v.vCount
-do \; v.mesh:setColor(i \, ofFloatColor(math.abs(math.sin(fr * 0.01
-* i)) \, math.abs(math.cos(fr * 0.001 * i)) \, math.abs(math.tan(fr
-* 0.001 * i)) \, 0.777)) \; end \; v.mesh:drawFaces() \;;
-#X obj 8 75 ofelia d \$0-mainmesh \; M.mesh = ofMesh.plane(400 \, 400
+#X obj 4 237 ofDraw;
+#X msg 4 4 destroy;
+#X obj 4 71 ofelia d \$0-mainmesh \; M.mesh = ofMesh.plane(400 \, 400
 \, 16 \, 16 \, OF_PRIMITIVE_TRIANGLE_STRIP) \; M.vCount = M.mesh:getNumVertices()
 \; M.colors = ofTable() \; for i=0 \, M.vCount do \; M.colors[i] =
 ofFloatColor() \; M.colors[i]:set(i / 256 \, i / 256 \, i / 256 \,
 255) \; end \; for i=0 \, #M.colors do \; M.mesh:addColor(M.colors[i])
 \; end \;;
-#X connect 0 0 7 0;
+#X obj 5 260 ofelia f \; local v = require("\$0-mainmesh") \; ofTranslate(200
+\, 200) \; local fr = ofGetFrameNum() * 0.1 \; for i=0 \, v.vCount
+do \; v.mesh:setColor(i \, ofFloatColor(math.abs(math.sin(fr * 0.01
+* i)) \, math.abs(math.cos(fr * 0.001 * i)) \, math.abs(math.tan(fr
+* 0.001 * i)) \, 1)) \; end \; v.mesh:drawFaces() \;;
+#X connect 0 0 6 0;
 #X connect 1 0 2 0;
-#X connect 3 0 7 0;
-#X connect 4 0 6 0;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
 #X connect 5 0 2 0;
